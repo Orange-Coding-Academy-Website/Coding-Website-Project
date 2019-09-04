@@ -34,8 +34,11 @@ class NavBar extends Component {
       <Router>
         <>
           <div>
-            <nav className="navbar navbar-light bg-light">
+            <nav className="navbar  bg" style={{backgroundColor:'#FFA500'}}>
               <a className="navbar-brand">Orange Coding Academy website</a>
+              <img src='https://upload.wikimedia.org/wikipedia/commons/c/c8/Orange_logo.svg' className="float-left" style={{
+                width:'35px'
+              }}/>
             </nav>
             <nav className="navbar sticky-top navbar-light bg-light">
               <a className="navbar-brand" href="/">
