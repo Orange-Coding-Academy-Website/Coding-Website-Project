@@ -34,11 +34,11 @@ class NavBar extends Component {
       <Router>
         <>
           <div>
-            <nav className="navbar  bg" style={{backgroundColor:'#FFA500'}}>
+            <nav className="navbar  bg" style={{backgroundColor:'#FF7A01'}}>
               <a className="navbar-brand">Orange Coding Academy website</a>
-              <img src='https://upload.wikimedia.org/wikipedia/commons/c/c8/Orange_logo.svg' className="float-left" style={{
-                width:'35px'
-              }}/>
+              {/* <img src='https://upload.wikimedia.org/wikipedia/commons/c/c8/Orange_logo.svg' className="float-left" style={{
+                width:'35px' 
+              }}/> */}
             </nav>
             <nav className="navbar sticky-top navbar-light bg-light">
               <a className="navbar-brand" href="/">
@@ -61,19 +61,10 @@ class NavBar extends Component {
                 Contact Us
               </a>
               <form className="form-inline">
-                <input
-                  className="form-control mr-sm-2"
-                  type="search"
-                  placeholder="Search"
-                  aria-label="Search"
-                />
-                <button
-                  className="btn btn-outline-success my-2 my-sm-0"
-                  type="submit"
-                >
-                  Search
-                </button>
-                <a className="btn btn-info" href="/Login">
+                
+                <a className="btn btn" style={{
+                  backgroundColor:'#FF7A01'
+                }} href="/Login">
                   Logout
                 </a>
               </form>

@@ -7,10 +7,12 @@ class Home extends Component {
       <div>
         <div className="row">
         <div className="col-1"/>
-          <div class="col-10">
+          <div className="col-10">
             <div>
               {/* Start slider Picture */}
-              <div
+
+
+              {/* <div
                 id="carouselExampleIndicators"
                 className="carousel slide"
                 data-ride="carousel"
@@ -19,7 +21,7 @@ class Home extends Component {
                   <li
                     data-target="#carouselExampleIndicators"
                     data-slide-to="0"
-                    class="active"
+                    className="active"
                   ></li>
                   <li
                     data-target="#carouselExampleIndicators"
@@ -80,7 +82,10 @@ class Home extends Component {
                   ></span>
                   <span className="sr-only">Next</span>
                 </a>
-              </div>
+              </div> */}
+              <img src="https://www.orange.jo/EN/PublishingImages/coding-academy_en.png" style={{width:'100%'}}/>
+              
+              
               {/* End of Slider */}
               <p style={{
                 margin:'50px'
