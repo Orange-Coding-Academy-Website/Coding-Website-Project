@@ -1,18 +1,15 @@
 import React, { Component } from "react";
-
 class Home extends Component {
   state = {};
   render() {
     return (
       <div>
         <div className="row">
-        <div className="col-1"/>
-          <div className="col-10">
+          <div className="col-1" />
+          <div class="col-10">
             <div>
               {/* Start slider Picture */}
-
-
-              {/* <div
+              <div
                 id="carouselExampleIndicators"
                 className="carousel slide"
                 data-ride="carousel"
@@ -21,7 +18,7 @@ class Home extends Component {
                   <li
                     data-target="#carouselExampleIndicators"
                     data-slide-to="0"
-                    className="active"
+                    class="active"
                   ></li>
                   <li
                     data-target="#carouselExampleIndicators"
@@ -32,31 +29,32 @@ class Home extends Component {
                     data-slide-to="2"
                   ></li>
                 </ol>
-
                 <div className="carousel-inner">
                   <div className="carousel-item active">
                     <img
-                      className="d-block w-100"
+                      className="d-block"
                       src="https://www.orange.jo/EN/PublishingImages/coding-academy_en.png"
                       alt="First slide"
+                      style={{ width: "1500px", height: "400px" }}
                     />
                   </div>
                   <div className="carousel-item">
                     <img
-                      className="d-block w-100"
-                      src="https://www.orange.jo/sites/Press/EN/PublishingImages/coding-academy-news.jpg"
-                      alt="Second slide"
+                      className="d-block"
+                      src="https://www.orange.jo/EN/PublishingImages/coding-academy_en.png"
+                      alt="First slide"
+                      style={{ width: "1500px", height: "400px" }}
                     />
                   </div>
                   <div className="carousel-item">
                     <img
-                      className="d-block w-100"
-                      src="http://jordantimes.com/sites/default/files/styles/news_inner/public/3-coding.jpg?itok=jj-pJtnY"
-                      alt="Third slide"
+                      className="d-block"
+                      src="https://www.orange.jo/EN/PublishingImages/coding-academy_en.png"
+                      alt="First slide"
+                      style={{ width: "1500px", height: "400px" }}
                     />
                   </div>
                 </div>
-
                 <a
                   className="carousel-control-prev"
                   href="#carouselExampleIndicators"
@@ -69,7 +67,6 @@ class Home extends Component {
                   ></span>
                   <span className="sr-only">Previous</span>
                 </a>
-
                 <a
                   className="carousel-control-next"
                   href="#carouselExampleIndicators"
@@ -82,14 +79,13 @@ class Home extends Component {
                   ></span>
                   <span className="sr-only">Next</span>
                 </a>
-              </div> */}
-              <img src="https://www.orange.jo/EN/PublishingImages/coding-academy_en.png" style={{width:'100%'}}/>
-              
-              
+              </div>
               {/* End of Slider */}
-              <p style={{
-                margin:'50px'
-              }}>
+              <p
+                style={{
+                  margin: "50px"
+                }}
+              >
                 Orange Jordan launched the Coding Academy project, in
                 partnership with Simplon.Co, to offer free programming courses
                 in different programming languages for the Jordanian youth, in
@@ -104,25 +100,11 @@ class Home extends Component {
                 enhancing the opportunities to educate and train them.
               </p>
             </div>
-
-            <div>
-              <h1>Materials</h1>
-              <p>
-                "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
-                eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut
-                enim ad minim veniam, quis nostrud exercitation ullamco laboris
-                nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor
-                in reprehenderit in voluptate velit esse cillum dolore eu fugiat
-                nulla pariatur. Excepteur sint occaecat cupidatat non proident,
-                sunt in culpa qui officia deserunt mollit anim id est laborum."
-              </p>
-            </div>
           </div>
         </div>
-        <div className="col-1"/>
+        <div className="col-1" />
       </div>
     );
   }
 }
-
 export default Home;

@@ -38,15 +38,18 @@ let videosSchema = {
 };
 
 let materialSchema = {
-  githubUrl: String,
-  slidesUrl: String
+  name: String,
+  video: String,
+  slides: String,
+  helpful: String
 };
 
 let postsSchema = {
   title: String,
   subject: String,
   priority: Number,
-  comments: Array
+  component: String
+  // comments: Array
 };
 
 let eventSchema = {
