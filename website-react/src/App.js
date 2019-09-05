@@ -16,7 +16,10 @@ export default class App extends Component {
         {/* <AppTamimi /> */}
         <NavBar />
         {
-          <nav class="navbar bg" style={{ backgroundColor: "#FFA500" }}>
+          <nav
+            class="navbar bg"
+            style={{ backgroundColor: "#FFA500", marginTop: "50px" }}
+          >
             <a href="https://www.orange.jo/en/Pages/default.aspx">Orange.jo</a>
             <a href="https://web.facebook.com/OrangeJordan?_rdc=1&_rdr">
               <button type="button" class="btn btn-fb">

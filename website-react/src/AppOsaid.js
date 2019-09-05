@@ -25,15 +25,22 @@ export default class AppOsaid extends Component {
     await this.setState({
       postData: newPostData
     });
-    axios.post(`http://localhost:9000/posts/a`, newPostData).then(res => {
-      console.log(res.data);
-      this.setState({ DATA: res.data });
+    let res = await axios.post(`http://localhost:9000/posts/a`, newPostData);
+    console.log(res.data);
+    await this.setState({
+      HTML: res.data.filter(elem => elem.component === "HTML"),
+      CSS: res.data.filter(elem => elem.component === "CSS"),
+      PHP: res.data.filter(elem => elem.component === "PHP"),
+      JavaScript: res.data.filter(elem => elem.component === "JavaScript"),
+      JQuery: res.data.filter(elem => elem.component === "JQuery"),
+      Mongo: res.data.filter(elem => elem.component === "Mongo"),
+      NodeJs: res.data.filter(elem => elem.component === "NodeJs"),
+      ReactC: res.data.filter(elem => elem.component === "ReactC")
     });
-
-    console.log(this.state.DATA);
+    // console.log(this.state.DATA);
   };
 
-  componentDidMount() {
+  async componentDidMount() {
     axios
       .get(`http://localhost:9000/posts/Posts`)
       .then(response => {
@@ -43,7 +50,9 @@ export default class AppOsaid extends Component {
           HTML: response.data.filter(elem => elem.component === "HTML"),
           CSS: response.data.filter(elem => elem.component === "CSS"),
           PHP: response.data.filter(elem => elem.component === "PHP"),
-          JavaScript: response.data.filter(elem => elem.component === "JavaScript"),
+          JavaScript: response.data.filter(
+            elem => elem.component === "JavaScript"
+          ),
           JQuery: response.data.filter(elem => elem.component === "JQuery"),
           Mongo: response.data.filter(elem => elem.component === "Mongo"),
           NodeJs: response.data.filter(elem => elem.component === "NodeJs"),
@@ -55,7 +64,7 @@ export default class AppOsaid extends Component {
         console.log("Error", error);
       });
   }
-//test
+  //test
   // addPost = (e) => {
   //   const newTodo={
   //    name:''

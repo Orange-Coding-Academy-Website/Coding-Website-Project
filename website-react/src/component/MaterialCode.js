@@ -29,20 +29,22 @@ export class MaterialCode extends Component {
     return (
       <>
         {/* <Header/> */}
-        <div className="container">
-          <div className="row">
-            {this.state.material.map((item, index) => {
-              return (
-                <MaterialBox
-                  material={item}
-                  key={index}
-                  a={x++}
-                  b={x++}
-                  c={x++}
-                />
-              );
-            })}
-            {/* {(x = 0)} */}
+        <div className="photo">
+          <div className="container MaterialCode">
+            <div className="row">
+              {this.state.material.map((item, index) => {
+                return (
+                  <MaterialBox
+                    material={item}
+                    key={index}
+                    a={x++}
+                    b={x++}
+                    c={x++}
+                  />
+                );
+              })}
+              {/* {(x = 0)} */}
+            </div>
           </div>
         </div>
       </>

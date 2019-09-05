@@ -27,8 +27,20 @@ code {
 .card-body i.fas.fa-sort-down {
   float: right;
 }
-
+/* 
 .MaterialCode {
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "Roboto", "Oxygen",
+    "Ubuntu", "Cantarell", "Fira Sans", "Droid Sans", "Helvetica Neue",
+    sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale; */
+  /* background-image: url("https://cdn-images-1.medium.com/max/800/0*ngXgBNNdx6iiWP8q.png"); */
+  /* background-repeat: no-repeat;
+  background-attachment: fixed;
+  background-size: cover;
+} */
+
+.photo {
   font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "Roboto", "Oxygen",
     "Ubuntu", "Cantarell", "Fira Sans", "Droid Sans", "Helvetica Neue",
     sans-serif;
@@ -38,4 +50,5 @@ code {
   background-repeat: no-repeat;
   background-attachment: fixed;
   background-size: cover;
+  height: 100vh;
 }

@@ -6,32 +6,36 @@ import axios from "axios";
 export default class Html extends Component {
   state = {
     addQ: [],
-    DATA:[]
+    DATA: []
   };
 
-   add =  async (title, subject,priority) => {
+  add = async (title, subject, priority) => {
     const newQ = {
       title,
       subject,
       priority,
-      name:'HTML'
+      name: "HTML"
     };
-      await this.setState({
-       addQ: [...this.state.addQ, newQ]
+    await this.setState({
+      addQ: [...this.state.addQ, newQ]
     });
 
-    this.props.addPost(this.state.addQ[0].title,this.state.addQ[0].subject,this.state.addQ[0].priority,this.state.addQ[0].name)
+    this.props.addPost(
+      this.state.addQ[0].title,
+      this.state.addQ[0].subject,
+      this.state.addQ[0].priority,
+      this.state.addQ[0].name
+    );
   };
 
-// componentDidMount(){
-//   this.setState({
-//     DATA : [...this.state.DATA, this.props.DATA] 
-//   })
-// }
-
+  // componentDidMount(){
+  //   this.setState({
+  //     DATA : [...this.state.DATA, this.props.DATA]
+  //   })
+  // }
 
   render() {
-
+    console.log("this.props.HTML", this.props.HTML);
     return (
       <>
         <div
@@ -50,10 +54,9 @@ export default class Html extends Component {
           <p>The language for building web pages.</p>
         </div>
 
-
         <Question add={this.add} />
 
-        <Answer HTML={this.props.HTML} nam = {"HTML"}/>
+        <Answer HTML={this.props.HTML} nam={"HTML"} />
       </>
     );
   }
