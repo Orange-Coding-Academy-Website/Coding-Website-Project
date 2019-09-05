@@ -22,7 +22,7 @@ export default class Events extends Component {
                 <center>
                   <h3>{event.title} </h3>
                 </center>
-                <p style={{ margin: "20px 20px 60px 10px"  }}>{event.disc}</p>
+                <p style={{ margin: "20px 20px 60px 10px" }}>{event.disc}</p>
               </div>
             ))}
           </div>
