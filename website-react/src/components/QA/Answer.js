@@ -1,39 +1,51 @@
 import React, { Component } from 'react'
-
 export default class Answer extends Component {
+
+state ={
+  StateData:[]
+};
+
+ async componentDidMount  (){
+  await  this.setState(
+    
+  this.state.StateData=this.props[this.props.nam]
+
+
+    )
+
+}
+
+
     render() {
-
-      const {addQ} = this.props;
-
-        return (
+  
+  
+      return (
 
           
 
             <div>
                 <br></br>
                 <ul class="list-group" style={{width:'95%',margin:'auto'}}>
-  <li class="list-group-item d-flex justify-content-between align-items-center">
-    Cras justo odio
-    <span class="badge badge-primary badge-pill">14</span>
-  </li>
-  <li class="list-group-item d-flex justify-content-between align-items-center">
-    Dapibus ac facilisis in
-    <span class="badge badge-primary badge-pill">2</span>
-  </li>
-  <li class="list-group-item d-flex justify-content-between align-items-center">
-    Morbi leo risus
-    <span class="badge badge-primary badge-pill">1</span>
-  </li>
+  
 
 
-  {  addQ.map((elem)=>(
-        <li class="list-group-item d-flex justify-content-between align-items-center"> {elem.title} 
-        <span class="badge badge-primary badge-pill">4</span>
-        </li>
-        
+  {  this.state.StateData.map((elem)=>(<>
+
+    <div class="card">
+  <h5 class="card-header">{elem.title}</h5>
+  <div class="card-body">
+    <h5 class="card-title">{elem.subject}</h5>
+    <a href="#" class="btn btn-primary">Comments</a>
+  </div>
+</div>
+
+  
+
+        </>
        ))       }
 
 </ul>
+
 
 
 

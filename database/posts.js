@@ -9,7 +9,7 @@ let createPosts = (addedPost,cb) => {
         cb(err);
       } else {
         console.log("DB:createTasks My Posts data", data);
-        cb(data);
+        getPosts(cb);
       }
     }
   );

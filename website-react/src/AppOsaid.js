@@ -27,14 +27,28 @@ export default class AppOsaid extends Component {
     });
     axios.post(`http://localhost:9000/posts/a`, newPostData).then(res => {
       console.log(res.data);
+      this.setState({ DATA: res.data });
     });
+
+    console.log(this.state.DATA);
   };
 
   componentDidMount() {
     axios
-      .get(`http://localhost:9000/Posts/a`)
+      .get(`http://localhost:9000/posts/Posts`)
       .then(response => {
-        this.setState({ addQ: response.data });
+        console.log("CDM", response.data);
+
+        this.setState({
+          HTML: response.data.filter(elem => elem.component === "HTML"),
+          CSS: response.data.filter(elem => elem.component === "CSS"),
+          PHP: response.data.filter(elem => elem.component === "PHP"),
+          JavaScript: response.data.filter(elem => elem.component === "JavaScript"),
+          JQuery: response.data.filter(elem => elem.component === "JQuery"),
+          Mongo: response.data.filter(elem => elem.component === "Mongo"),
+          NodeJs: response.data.filter(elem => elem.component === "NodeJs"),
+          ReactC: response.data.filter(elem => elem.component === "ReactC")
+        });
         console.log("React:get response.data", response.data);
       })
       .catch(error => {
@@ -186,7 +200,7 @@ export default class AppOsaid extends Component {
                         Some quick example text to build on the card title and
                         make up the bulk of the card's content.
                       </p>
-                      <a href="/Ask/ReactC" className="btn btn-primary">
+                      <a href="ReactC" className="btn btn-primary">
                         Go to this section
                       </a>
                     </div>
@@ -234,35 +248,75 @@ export default class AppOsaid extends Component {
 
           <Route
             path="/Ask/HTML"
-            component={() => <Html addPost={this.addPost} />}
+            component={() => (
+              <Html
+                addPost={this.addPost}
+                HTML={this.state.HTML}
+                nam={"HTML"}
+              />
+            )}
           />
           <Route
             path="/Ask/CSS"
-            component={() => <Css addPost={this.addPost} />}
+            component={() => (
+              <Css addPost={this.addPost} CSS={this.state.CSS} nam={"CSS"} />
+            )}
           />
           <Route
             path="/Ask/JQuery"
-            component={() => <JQuery addPost={this.addPost} />}
+            component={() => (
+              <JQuery
+                addPost={this.addPost}
+                JQuery={this.state.JQuery}
+                nam={"JQuery"}
+              />
+            )}
           />
           <Route
             path="/Ask/JavaScript"
-            component={() => <JavaScript addPost={this.addPost} />}
+            component={() => (
+              <JavaScript
+                addPost={this.addPost}
+                JavaScript={this.state.JavaScript}
+                nam={"JavaScript"}
+              />
+            )}
           />
           <Route
             path="/Ask/PHP"
-            component={() => <PHP addPost={this.addPost} />}
+            component={() => (
+              <PHP addPost={this.addPost} PHP={this.state.PHP} nam={"PHP"} />
+            )}
           />
           <Route
             path="/Ask/Mongo"
-            component={() => <Mongo addPost={this.addPost} />}
+            component={() => (
+              <Mongo
+                addPost={this.addPost}
+                Mongo={this.state.Mongo}
+                nam={"Mongo"}
+              />
+            )}
           />
           <Route
             path="/Ask/ReactC"
-            component={() => <ReactC addPost={this.addPost} />}
+            component={() => (
+              <ReactC
+                addPost={this.addPost}
+                ReactC={this.state.ReactC}
+                nam={"ReactC"}
+              />
+            )}
           />
           <Route
             path="/Ask/NodeJs"
-            component={() => <NodeJs addPost={this.addPost} />}
+            component={() => (
+              <NodeJs
+                addPost={this.addPost}
+                NodeJs={this.state.NodeJs}
+                nam={"NodeJs"}
+              />
+            )}
           />
         </>
       </Router>

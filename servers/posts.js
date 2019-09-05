@@ -11,7 +11,9 @@ router.post('/a', (req, res) => {
   console.log("body", req.body)
   mongo.createPosts(req.body, (result) => {
     res.json(result);
+
   })
+  
 });
 
 

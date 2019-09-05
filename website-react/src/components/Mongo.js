@@ -4,6 +4,28 @@ import Question from './QA/Question'
 import Answer from './QA/Answer'
 
 export default class Mongo extends Component {
+
+
+    state = {
+        addQ: [],
+        DATA:[]
+      };
+    
+       add =  async (title, subject,priority) => {
+        const newQ = {
+          title,
+          subject,
+          priority,
+          name:'JavaScript'
+        };
+          await this.setState({
+           addQ: [...this.state.addQ, newQ]
+        });
+    
+        this.props.addPost(this.state.addQ[0].title,this.state.addQ[0].subject,this.state.addQ[0].priority,this.state.addQ[0].name)
+      };
+    
+
     render() {
         return (
             <>
@@ -15,12 +37,9 @@ export default class Mongo extends Component {
     <p>Document database with the scalability and flexibility that you want with the querying and indexing that you need.</p>
   </div>           
   
+  <Question add={this.add} />
 
-  <Question />
-
-  <Answer />
-  
-  
+  <Answer Mongo={this.props.Mongo} nam = {"Mongo"} />
   
   
   

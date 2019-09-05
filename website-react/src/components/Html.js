@@ -5,7 +5,8 @@ import axios from "axios";
 
 export default class Html extends Component {
   state = {
-    addQ: []
+    addQ: [],
+    DATA:[]
   };
 
    add =  async (title, subject,priority) => {
@@ -22,7 +23,11 @@ export default class Html extends Component {
     this.props.addPost(this.state.addQ[0].title,this.state.addQ[0].subject,this.state.addQ[0].priority,this.state.addQ[0].name)
   };
 
-
+// componentDidMount(){
+//   this.setState({
+//     DATA : [...this.state.DATA, this.props.DATA] 
+//   })
+// }
 
 
   render() {
@@ -48,7 +53,7 @@ export default class Html extends Component {
 
         <Question add={this.add} />
 
-        <Answer addQ={this.state.addQ} />
+        <Answer HTML={this.props.HTML} nam = {"HTML"}/>
       </>
     );
   }
