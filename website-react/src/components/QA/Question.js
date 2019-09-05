@@ -15,7 +15,7 @@ export default class Question extends Component {
         this.props.add(this.state.title,this.state.subject,this.state.priority);
     
 
-        alert ('Hello')
+        alert ('Question was submitted')
 
     }
 

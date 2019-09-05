@@ -4,6 +4,27 @@ import Question from './QA/Question'
 import Answer from './QA/Answer'
 
 export default class ReactC extends Component {
+
+    state = {
+        addQ: [],
+        DATA:[]
+      };
+    
+       add =  async (title, subject,priority) => {
+        const newQ = {
+          title,
+          subject,
+          priority,
+          name:'ReactC'
+        };
+          await this.setState({
+           addQ: [...this.state.addQ, newQ]
+        });
+    
+        this.props.addPost(this.state.addQ[0].title,this.state.addQ[0].subject,this.state.addQ[0].priority,this.state.addQ[0].name)
+      };
+    
+
     render() {
         return (
             <>
@@ -16,12 +37,11 @@ export default class ReactC extends Component {
 
       </div>           
   
+      <Question add={this.add} />
 
-  <Question />
+      <Answer ReactC={this.props.ReactC} nam = {"ReactC"} />
 
-  <Answer />
-  
-  
+
   
   
   

@@ -4,6 +4,27 @@ import Answer from './QA/Answer'
 
 
 export default class Css extends Component {
+
+    state = {
+        addQ: [],
+        DATA:[]
+      };
+    
+       add =  async (title, subject,priority) => {
+        const newQ = {
+          title,
+          subject,
+          priority,
+          name:'CSS'
+        };
+          await this.setState({
+           addQ: [...this.state.addQ, newQ]
+        });
+    
+        this.props.addPost(this.state.addQ[0].title,this.state.addQ[0].subject,this.state.addQ[0].priority,this.state.addQ[0].name)
+      };
+    
+
     render() {
         return (
             <>
@@ -17,9 +38,9 @@ export default class Css extends Component {
   </div>           
   
 
-  <Question />
+  <Question add={this.add} />
 
-  <Answer addQ={[]} />
+  <Answer CSS={this.props.CSS} nam = {"CSS"} />
   
   
   

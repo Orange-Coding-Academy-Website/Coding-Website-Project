@@ -4,6 +4,27 @@ import Question from './QA/Question'
 import Answer from './QA/Answer'
 
 export default class NodeJs extends Component {
+
+    state = {
+        addQ: [],
+        DATA:[]
+      };
+    
+       add =  async (title, subject,priority) => {
+        const newQ = {
+          title,
+          subject,
+          priority,
+          name:'NodeJs'
+        };
+          await this.setState({
+           addQ: [...this.state.addQ, newQ]
+        });
+    
+        this.props.addPost(this.state.addQ[0].title,this.state.addQ[0].subject,this.state.addQ[0].priority,this.state.addQ[0].name)
+      };
+    
+
     render() {
         return (
             <>
@@ -15,10 +36,9 @@ export default class NodeJs extends Component {
     <p>JavaScript runtime built on Chrome's V8 JavaScript engine.</p>
   </div>           
   
+  <Question add={this.add} />
 
-  <Question />
-
-  <Answer />
+  <Answer NodeJs={this.props.NodeJs} nam = {"NodeJs"} />
   
   
   
