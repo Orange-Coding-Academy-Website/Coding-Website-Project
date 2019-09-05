@@ -56,7 +56,7 @@ class NavBar extends Component {
                 Events
               </a>
               <a className="navbar-brand" href="/Contact">
-                Contact Us
+                About Us
               </a>
               <form className="form-inline">
                 <a
